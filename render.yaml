@@ -1,0 +1,20 @@
+
+services:
+  - type: web
+    name: nightscout
+    env: node
+    region: oregon
+    branch: master
+    buildCommand: ""
+    startCommand: "node server.js"
+    envVars:
+      - key: MONGO_URI
+        value: mongodb+srv://nicolaslleisen:Serge521086@cluster0.ony5auc.mongodb.net/nightscout?retryWrites=true&w=majority
+      - key: API_SECRET
+        value: YourSuperSecretKey
+      - key: TIMEZONE
+        value: Europe/Paris
+      - key: ENABLE
+        value: careportal basal iob cob treatments devicestatus
+      - key: PORT
+        value: "10000"
